@@ -15,4 +15,3 @@ async function apiRequest(){
 
 
 
-console.log('its working')
