@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
-app.use(express.static('public'))
-
 const port = process.env.PORT || 3000
+
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
 
 const rappers = {
     '21 savage':{
@@ -23,7 +24,7 @@ const rappers = {
 }
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/home.html');
+    res.render(__dirname + '/index.ejs');
 });
 
 app.get('/api/:rapperName', (req, res)=>{
