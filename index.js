@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
-
+const homeRoutes = require('./routes/main')
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
@@ -23,9 +23,6 @@ const rappers = {
     }
 }
 
-app.get('/', function(req, res){
-    res.render(__dirname + '/index.ejs');
-});
 
 app.get('/api/:rapperName', (req, res)=>{
     const rappersName = req.params.rapperName.toLowerCase()
@@ -35,6 +32,7 @@ app.get('/api/:rapperName', (req, res)=>{
         res.json(rappers['dylan'])
     }
 })
+app.use('/', homeRoutes)
 app.listen(port, function(){
     console.log('listening on port 3000 go and catch it');
 });
