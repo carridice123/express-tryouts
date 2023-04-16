@@ -10,15 +10,15 @@ async function apiRequest(){
         let div = document.querySelector('div')
 
         let h2 = document.createElement('h2')
-        h2.innerText = 'Birth Name: ' + data.birthName
+        h2.innerText = 'Birth Name is ' + data.birthName
         div.appendChild(h2)
 
         let h3 = document.createElement('h2')
-        h3.innerText = `${data.birthName} is ${data.age} years old`
+        h3.innerText = 'Age is ' + data.age
         div.appendChild(h3)
 
         let h4 = document.createElement('h2')
-        h4.innerText = `Birth location is ` + data.birthLocation
+        h4.innerText = 'Birth Location is ' + data.birthLocation
         div.appendChild(h4)
 
        
