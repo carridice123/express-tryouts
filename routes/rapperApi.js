@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const controllerApi = require('../controller/api')
+const controllerApi = require('../controllers/api')
 
 router.get('/api/:rapperName', controllerApi.rapper)
 
